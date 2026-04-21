@@ -27,13 +27,11 @@ const UNITS = [
   {
     name: 'Unidade Luz Esperança',
     description: 'Um ambiente focado no acolhimento e na renovação, com infraestrutura moderna para o bem-estar do paciente.',
-    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800', // Placeholder
     features: ['Acomodações Confortáveis', 'Acompanhamento Psicológico', 'Área de Lazer Completa']
   },
   {
     name: 'Unidade Meu Recanto',
     description: 'Localizada em meio à natureza, oferece paz e tranquilidade essenciais para o processo de introspecção e cura.',
-    image: 'https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800', // Placeholder
     features: ['Contato com a Natureza', 'Atividades Terapêuticas', 'Ambiente Familiar']
   }
 ];
@@ -219,37 +217,26 @@ export default function App() {
                 initial={{ opacity: 0, x: idx % 2 === 0 ? -30 : 30 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
-                className="group relative overflow-hidden bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50"
+                className="group relative overflow-hidden bg-white rounded-[2rem] border border-slate-100 shadow-xl shadow-slate-200/50 p-8"
               >
-                <div className="h-64 overflow-hidden relative">
-                  <img 
-                    src={unit.name === 'Unidade Luz Esperança' ? 'https://picsum.photos/seed/clinica1/1200/800' : 'https://picsum.photos/seed/clinica2/1200/800'} 
-                    alt={unit.name}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <h3 className="absolute bottom-6 left-8 text-3xl font-bold text-white">{unit.name}</h3>
-                </div>
-                <div className="p-8">
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    {unit.description}
-                  </p>
-                  <ul className="space-y-3 mb-8">
-                    {unit.features.map(f => (
-                      <li key={f} className="flex items-center gap-3 text-slate-700 font-medium">
-                        <CheckCircle2 className="text-green-500 w-5 h-5 flex-shrink-0" />
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <button 
-                    onClick={() => openWhatsApp(CONTACTS[1].number)}
-                    className="w-full py-4 border-2 border-sky-600 text-sky-600 rounded-2xl font-bold hover:bg-sky-600 hover:text-white transition-all "
-                  >
-                    Conhecer Unidade via Fotos
-                  </button>
-                </div>
+                <h3 className="text-3xl font-bold text-sky-900 mb-4">{unit.name}</h3>
+                <p className="text-slate-600 mb-6 leading-relaxed">
+                  {unit.description}
+                </p>
+                <ul className="space-y-3 mb-8">
+                  {unit.features.map(f => (
+                    <li key={f} className="flex items-center gap-3 text-slate-700 font-medium">
+                      <CheckCircle2 className="text-green-500 w-5 h-5 flex-shrink-0" />
+                      {f}
+                    </li>
+                  ))}
+                </ul>
+                <button 
+                  onClick={() => openWhatsApp(CONTACTS[1].number)}
+                  className="w-full py-4 border-2 border-sky-600 text-sky-600 rounded-2xl font-bold hover:bg-sky-600 hover:text-white transition-all "
+                >
+                  Saiba Mais sobre a Unidade
+                </button>
               </motion.div>
             ))}
           </div>
@@ -289,27 +276,12 @@ export default function App() {
               </div>
             </div>
 
-            {/* Gallery Preview */}
-            <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 aspect-[2/1]">
-              <div className="aspect-square bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://picsum.photos/seed/leisure/600/600" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <div className="aspect-square bg-slate-800 rounded-3xl overflow-hidden mt-8 shadow-2xl">
-                <img src="https://picsum.photos/seed/room/600/600" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <div className="aspect-square bg-slate-800 rounded-3xl overflow-hidden shadow-2xl">
-                <img src="https://picsum.photos/seed/food/600/600" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-              <div className="aspect-square bg-slate-800 rounded-3xl overflow-hidden mt-8 shadow-2xl">
-                <img src="https://picsum.photos/seed/living/600/600" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
-              </div>
-            </div>
             <div className="mt-12 text-center">
               <button 
                 onClick={() => openWhatsApp(CONTACTS[0].number)}
                 className="bg-sky-600 px-10 py-4 rounded-2xl font-bold hover:bg-sky-500 transition-all inline-flex items-center gap-3"
               >
-                Ver Galeria no WhatsApp
+                Solicitar Fotos no WhatsApp
                 <MessageCircle size={20} />
               </button>
             </div>
