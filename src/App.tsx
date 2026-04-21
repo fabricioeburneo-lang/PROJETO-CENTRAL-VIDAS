@@ -69,7 +69,7 @@ export default function App() {
             <div className="bg-sky-600 p-2 rounded-lg">
               <LifeBuoy className="text-white w-6 h-6" />
             </div>
-            <span className="font-bold text-xl tracking-tight text-sky-900">Luz Esperança & Meu Recanto</span>
+            <span className="font-bold text-xl tracking-tight text-sky-900">Central Vidas</span>
           </div>
           
           <div className="hidden md:flex gap-8 items-center font-medium text-slate-600">
@@ -373,7 +373,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex items-center gap-2">
             <LifeBuoy size={20} className="text-sky-600" />
-            <span className="font-bold text-white tracking-tight">Luz Esperança & Meu Recanto</span>
+            <span className="font-bold text-white tracking-tight">Central Vidas</span>
           </div>
           <div className="text-sm font-medium">
             &copy; {new Date().getFullYear()} Clínica de Recuperação. Todos os direitos reservados.
